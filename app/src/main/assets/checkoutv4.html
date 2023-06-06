@@ -14,12 +14,7 @@
     var json =  JSON.parse(Android.sendParamsCheckoutv4FromAndroid());
 
 	Culqi.publicKey = 'pk_test_90667d0a57d45c48';
-	//'pk_live_c5902910f173e0a6';
-	//;
-	//'pk_live_3370a3f996f9739';//'pk_live_CeJQJqX4rcVSKswM';
-	//'pk_live_fca39fedc1d0c145'//'pk_test_04d3ce6c011390f9'
-	//'pk_test_04d3ce6c011390f9'//'pk_live_C9RlY2dmQZk0DDIj';
-	//'pk_live_4ec39228a02eb023';//'pk_live_b07d118b41559d5f'// prod
+
 
     Culqi.settings({
       title: json.title,
@@ -27,9 +22,6 @@
       amount: json.amount,
       version: '3',
 	  order: json.orderId,
-
-      culqiclient: 'prestashop',
-      culqiclientversion: '1.6.1.10',
     });
     Culqi.options({
       lang: 'es',
@@ -70,6 +62,7 @@
         };
         // alert(message);
          // Realizar la llamada al servicio por POST
+         // Se recomienda no poner la llave sk directamente en el codigo fuente aqui se puso por temas de pruebas
           fetch('https://api.culqi.com/v2/charges', {
             method: 'POST',
             headers: {

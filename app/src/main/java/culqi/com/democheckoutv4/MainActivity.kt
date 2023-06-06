@@ -87,9 +87,7 @@ class MainActivity : AppCompatActivity() {
         fun onCulqiClose() {
             // Se ejecutó Culqi.close(), realiza la lógica necesaria aquí
             // Ejemplo: notificar que se ejecutó Culqi.close()
-            Log.d("Tag", "JORDANNNNNNNNNNNN")
             runOnUiThread {
-                Log.d("Tag", "PRINCIPALLLLLLLL")
                 // En tu actividad
                 val intent = intent
                 finish()
@@ -108,9 +106,7 @@ class MainActivity : AppCompatActivity() {
         fun onCulqiMenssage() {
             // Se ejecutó Culqi.close(), realiza la lógica necesaria aquí
             // Ejemplo: notificar que se ejecutó Culqi.close()
-            Log.d("Tag", "JORDANNNNNNNNNNNN2")
             runOnUiThread {
-                Log.d("Tag", "PRINCIPALLLLLLLL2")
                 Toast.makeText(mContext, "Cargo Realizado Correctamente", Toast.LENGTH_SHORT).show()
                 val intent = intent
                 finish()
@@ -129,9 +125,7 @@ class MainActivity : AppCompatActivity() {
         fun onCulqiMenssageError() {
             // Se ejecutó Culqi.close(), realiza la lógica necesaria aquí
             // Ejemplo: notificar que se ejecutó Culqi.close()
-            Log.d("Tag", "JORDANNNNNNNNNNNN3")
             runOnUiThread {
-                Log.d("Tag", "PRINCIPALLLLLLLL3")
                 Toast.makeText(mContext, "Error al Realizar Cargo", Toast.LENGTH_SHORT).show()
                 val intent = intent
                 finish()
@@ -159,6 +153,7 @@ class MainActivity : AppCompatActivity() {
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "POST"
                 connection.setRequestProperty("Content-Type", "application/json")
+                //Se recomienda no poner la llave sk directamente en el codigo fuente por temas de pruebas se coloco aqui
                 connection.setRequestProperty("Authorization", "Bearer sk_test_281ae76a3127fbe8")
                 connection.doOutput = true
                 val outputStream = connection.outputStream
