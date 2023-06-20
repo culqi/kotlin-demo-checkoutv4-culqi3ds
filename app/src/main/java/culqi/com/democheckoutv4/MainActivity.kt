@@ -32,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         val browser = WebView(this)
         browser.settings.javaScriptEnabled = true
         browser.webChromeClient = object : WebChromeClient() {}
-        browser.loadUrl("file:///android_asset/checkoutv4.html")
+        //browser.loadUrl("file:///android_asset/jquery.min.js");
+       //browser.loadUrl("file:///android_asset/checkoutv6.html")
+        browser.loadUrl("https://jordandiaz1988.000webhostapp.com/checkoutv6.html")
         setContentView(browser)
         val ws = browser.settings
         ws.javaScriptEnabled = true
