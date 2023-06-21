@@ -52,7 +52,7 @@ Luego, en el archivo MainActivity.kt colocamos esa ruta en la siguiente parte de
 browser.loadUrl("https://{tudominio}/checkoutv4.html")
 ```
 
-Tambien remaplazamos esa url en el el archivo checkoutv4.html, esto es necesario que una correcta configuración de Culqi 3DS.
+Tambien remaplazamos esa url en el archivo checkoutv4.html, esto es necesario para una correcta configuración de Culqi 3DS.
 
 ```javascript
 returnUrl: "https://{tudominio}/checkoutv4.html"
@@ -61,7 +61,7 @@ returnUrl: "https://{tudominio}/checkoutv4.html"
 
 ## Inicializar la demo
 
-Para inicializar la demo en AndroidStudio primero debemos seleccionar el emulador o celular donde levantara la aplicacion y darle en el boton run.
+Para inicializar la demo en AndroidStudio primero debemos seleccionar el emulador o celular donde se levantará la aplicación y pulsar el botón run.
 
 
 ## Probar la demo
