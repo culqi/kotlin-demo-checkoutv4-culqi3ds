@@ -45,7 +45,7 @@ Luego, en el archivo MainActivity.kt colocamos dicha ruta en la siguiente parte 
 browser.loadUrl("https://{tudominio}/checkoutv4.html")
 ```
 
-Tambien remaplazamos esa url en el archivo checkoutv4.html, esto es necesario para una correcta configuración de Culqi 3DS.
+Tambien remplazamos esa url en el archivo checkoutv4.html, esto es necesario para una correcta configuración de Culqi 3DS.
 
 ```javascript
 returnUrl: "https://{tudominio}/checkoutv4.html"
@@ -64,5 +64,5 @@ Para poder visualizar la demo debemos generar un apk desde el menu Build/Build B
 
 ## Importante para producción
 
-No debes configurar tu llave privada(sk) dentro del proyecto, para efectos de pruebas en está demo se colocó la sk en el archivo checkoutv4.html, pero tu sk debe estar protegido-
-Para ello debes desarrollar un backend para el proyecto, el cual hará uso de tu sk y consumirá los servicio de cargos y órdenes de Culqi, posteriomente este bakend debe ser consumido desde tu aplicación android.
+No debes configurar tu llave privada(sk) dentro del proyecto, para efectos de pruebas en está demo se colocó la sk en el archivo checkoutv4.html, pero tu sk debe estar protegido.
+Para ello debes desarrollar un backend para el proyecto, el cual hará uso de tu sk y consumirá los servicio de [cargos](https://apidocs.culqi.com/#tag/Cargos/operation/crear-cargo) y [órdenes](https://apidocs.culqi.com/#tag/Ordenes/operation/crear-orden) de Culqi, posteriomente este bakend debe ser consumido desde tu aplicación android.
