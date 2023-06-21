@@ -6,6 +6,7 @@ La demo integra Culqi Kotlin, Checkout V4 , Culqi 3DS y es compatible con la v2.
 
 * WebHosting
 * Kotlin 1.9.0 +
+* Backend para generar cargos y órdenes
 * Afiliate [aquí](https://afiliate.culqi.com/).
 * Si vas a realizar pruebas obtén tus llaves desde [aquí](https://integ-panel.culqi.com/#/registro), si vas a realizar transacciones reales obtén tus llaves desde [aquí](https://panel.culqi.com/#/registro) (1).
 
@@ -17,27 +18,19 @@ La demo integra Culqi Kotlin, Checkout V4 , Culqi 3DS y es compatible con la v2.
 
 ## Configuración
 
-Dentro de la carpeta assets encontraras un archivo con el nombre checkoutv4.html donde modificaremos las siguientes lineas:
+Dentro de la carpeta **assets** encontraras un archivo con el nombre checkoutv4.html donde modificaremos las siguientes lineas:
 
 ```html
  Culqi3DS.publicKey = "pk_test_90667d0a57d45c48";
  Culqi.publicKey = 'pk_test_90667d0a57d45c48';
 ```
 
-Tambien se debe cambiar la url del backend ya que por temas de pruebas se uso el backend que tiene culqi
+En dichas lineas estamos asignando nuestra llave pública(pk), tanto a la configuración del checkoutv4 asi como a la del Culqi 3DS, luego modificaremos la siguiente lineas para poder realizar cargos y ordenes
 
- 
-```javacript
- url: "https://api.culqi.com/v2/charges"
-```
-
-En dichas lineas estamos asignando nuestra pk tanto a la configuración del checkout asi como el 3ds, luego modificaremos la siguiente lineas para poder realizar
-cargos y ordenes
+> Importante: No debes colocar tu llave privada(sk) dentro de tu proyecto front.
 
 ```javacript
- headers: {
-                    "Authorization": "Bearer sk_test_1573b0e8079863ff"
-                },
+"Authorization": "Bearer sk_test_1573b0e8079863ff"
 ```
 
 Luego debemos cargar el checkoutv4.html y el archivo jquery.min.js a nuestro webhosting.
@@ -45,7 +38,7 @@ Subido los archivos deberemos tener una ruta parecida a la siguiente:
 
 https://{tudominio}/checkoutv4.html
 
-Luego, en el archivo MainActivity.kt colocamos esa ruta en la siguiente parte de código.
+Luego, en el archivo MainActivity.kt colocamos dicha ruta en la siguiente parte de código.
 
 
 ```kotlin
@@ -67,3 +60,9 @@ Para inicializar la demo en AndroidStudio primero debemos seleccionar el emulado
 ## Probar la demo
 
 Para poder visualizar la demo debemos generar un apk desde el menu Build/Build Bundle(s)/APK(s) de AndroidStudio, luego proceder a instalarlo en algun emulador o dispositivo celular.
+
+
+## Importante para producción
+
+No debes configurar tu llave privada(sk) dentro del proyecto, para efectos de pruebas en está demo se colocó la sk en el archivo checkoutv4.html, pero tu sk debe estar protegido-
+Para ello debes desarrollar un backend para el proyecto, el cual hará uso de tu sk y consumirá los servicio de cargos y órdenes de Culqi, posteriomente este bakend debe ser consumido desde tu aplicación android.
