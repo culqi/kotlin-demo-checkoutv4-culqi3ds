@@ -59,7 +59,7 @@ Para inicializar la demo en AndroidStudio primero debemos seleccionar el emulado
 
 ## Probar la demo
 
-Para poder visualizar la demo debemos generar un apk desde el menu Build/Build Bundle(s)/APK(s) de AndroidStudio, luego proceder a instalarlo en algun emulador o dispositivo celular.
+Para poder visualizar la demo debemos generar un apk desde el menu Build/Build Bundle(s)/APK(s) de AndroidStudio, luego proceder a instalarlo en algún emulador o dispositivo celular.
 
 
 ## Importante para producción
