@@ -6,7 +6,7 @@ La demo integra Culqi Kotlin, Checkout V4 , Culqi 3DS y es compatible con la v2.
 
 * WebHosting
 * Kotlin 1.9.0 +
-* Backend para generar cargos y órdenes
+* Backend para generar cargos y órdenes.
 * Afiliate [aquí](https://afiliate.culqi.com/).
 * Si vas a realizar pruebas obtén tus llaves desde [aquí](https://integ-panel.culqi.com/#/registro), si vas a realizar transacciones reales obtén tus llaves desde [aquí](https://panel.culqi.com/#/registro) (1).
 
