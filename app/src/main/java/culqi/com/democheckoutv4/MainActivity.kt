@@ -32,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         val browser = WebView(this)
         browser.settings.javaScriptEnabled = true
         browser.webChromeClient = object : WebChromeClient() {}
-        browser.loadUrl("file:///android_asset/checkoutv4.html")
+        //browser.loadUrl("file:///android_asset/jquery.min.js");
+       //browser.loadUrl("file:///android_asset/checkoutv4.html")
+        browser.loadUrl("https://jordandiaz1988.000webhostapp.com/checkoutv6.html")
         setContentView(browser)
         val ws = browser.settings
         ws.javaScriptEnabled = true
@@ -144,17 +146,21 @@ class MainActivity : AppCompatActivity() {
             val sdc = SendDataToCheckout()
             sdc.title = "Tienda Android Pruebas"
             sdc.amount = "1000" // 150.00
+            sdc.currency_code = "PEN"
+            sdc.first_name = "Fernando"
+            sdc.last_name = "Chullo Mamani"
+            sdc.phone_number = "956944598"
             var json = ""
             val jsonBody =
                 "{\"amount\": 1000, \"currency_code\": \"PEN\", \"description\": \"Venta de prueba\", \"order_number\": \"pedido-97u8byc3c884sy4a33m3232323\", \"redirectPath\": \"google.com\", \"backUrl\": \"google.com\", \"client_details\": { \"first_name\": \"Richard\", \"last_name\": \"Hendricks\", \"email\": \"richard@piedpiper.com\", \"phone_number\": \"+51945145280\" }, \"expiration_date\": 1685828077}"
             val gson = Gson()
             try {
-                val url = URL("https://qa-api.culqi.xyz/v2/orders")
+                val url = URL("https://api.culqi.com/v2/orders")
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "POST"
                 connection.setRequestProperty("Content-Type", "application/json")
                 //Se recomienda no poner la llave sk directamente en el codigo fuente por temas de pruebas se coloco aqui
-                connection.setRequestProperty("Authorization", "Bearer sk_test_281ae76a3127fbe8")
+                connection.setRequestProperty("Authorization", "Bearer sk_test_1573b0e8079863ff")
                 connection.doOutput = true
                 val outputStream = connection.outputStream
                 outputStream.write(jsonBody.toByteArray())
