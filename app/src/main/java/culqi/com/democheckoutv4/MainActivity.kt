@@ -145,11 +145,11 @@ class MainActivity : AppCompatActivity() {
         fun sendParamsCheckoutv4FromAndroid(): String {
             val sdc = SendDataToCheckout()
             sdc.title = "Tienda Android Pruebas"
-            sdc.amount = "1000"; // 150.00
-            sdc.currency_code = "PEN";
-            sdc.first_name = "Fernando";
-            sdc.last_name = "Chullo Mamani";
-            sdc.phone_number = "956944598";
+            sdc.amount = "1000" // 150.00
+            sdc.currency_code = "PEN"
+            sdc.first_name = "Fernando"
+            sdc.last_name = "Chullo Mamani"
+            sdc.phone_number = "956944598"
             var json = ""
             val jsonBody =
                 "{\"amount\": 1000, \"currency_code\": \"PEN\", \"description\": \"Venta de prueba\", \"order_number\": \"pedido-97u8byc3c884sy4a33m3232323\", \"redirectPath\": \"google.com\", \"backUrl\": \"google.com\", \"client_details\": { \"first_name\": \"Richard\", \"last_name\": \"Hendricks\", \"email\": \"richard@piedpiper.com\", \"phone_number\": \"+51945145280\" }, \"expiration_date\": 1685828077}"
