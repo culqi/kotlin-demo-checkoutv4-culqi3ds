@@ -145,7 +145,7 @@ class MainActivity : AppCompatActivity() {
         fun sendParamsCheckoutv4FromAndroid(): String {
             val sdc = SendDataToCheckout()
             sdc.title = "Tienda Android Pruebas"
-            sdc.amount = "1000" // 150.00
+            sdc.amount = "1000"; // 150.00
             sdc.currency_code = "PEN";
             sdc.first_name = "Fernando";
             sdc.last_name = "Chullo Mamani";
