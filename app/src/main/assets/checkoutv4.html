@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://checkout.culqi.com/js/v4"></script>
     <script src="https://3ds.culqi.com" defer></script>
-   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.plugin.js" type="text/javascript"></script>-->
     <script src="jquery.min.js"></script>
 
 </head>
@@ -17,18 +15,14 @@
 
 <script  type="module" >
     Culqi3DS.publicKey = "pk_test_90667d0a57d45c48";
+    Culqi.publicKey = 'pk_test_90667d0a57d45c48';
+
     var json =  JSON.parse(Android.sendParamsCheckoutv4FromAndroid());
-
-	Culqi.publicKey = 'pk_test_90667d0a57d45c48';
-
-
-
 
     Culqi.settings({
       title: json.title,
-      currency: 'PEN',
+      currency: json.currency_code,
       amount: json.amount,
-      version: '3',
 	  order: json.orderId,
     });
     Culqi.options({
@@ -47,7 +41,7 @@
         buttonBackground: '', // hexadecimal
         menuColor: '', // hexadecimal
         linksColor: '', // hexadecimal
-        buttonText: "Donar",
+        buttonText: "Pagar",
 
         priceColor: '',
         //logo: 'https://avatars.githubusercontent.com/u/13783771?s=280&v=4'
@@ -74,10 +68,7 @@
                 Culqi.open();
             });
 
-
-
     function culqi() {
-    console.log("Entro a 3DS");
           if (Culqi.token) {
             Culqi.close();
             console.log("El token es: "+ Culqi.token.id);
